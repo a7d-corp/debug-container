@@ -8,6 +8,8 @@ ENV PACKAGES="\
 
 RUN apk add --no-cache $PACKAGES
 
-RUN /usr/sbin/setcap 'cap_net_bind_service=ep' /usr/sbin/tcpdump
+RUN /usr/sbin/setcap 'cap_net_bind_service=ep' /usr/sbin/tcpdump && \
+    echo "nobody ALL=(ALL) NOPASSWD: /usr/sbin/tcpdump" > /etc/sudoers.d/01_tcpdump && \
+    chmod 0440 /etc/sudoers.d/01_tcpdump
 
 ENTRYPOINT ["/bin/bash"]
