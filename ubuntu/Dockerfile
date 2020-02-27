@@ -14,5 +14,9 @@ RUN apt-get update && \
 
 RUN adduser --home "/home/notroot" --gecos "unprivileged user" --disabled-password --disabled-login --shell /bin/bash -u 1000 notroot
 
+RUN echo "export CONTAINER=ubuntu" > /etc/container && \
+    echo "source /etc/container" >> /root/.bashrc && \
+    echo "source /etc/container" >> /home/notroot/.bashrc
+
 ENTRYPOINT ["/bin/sleep"]
 CMD ["2h"]
