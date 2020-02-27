@@ -14,5 +14,9 @@ RUN /usr/sbin/setcap 'cap_net_bind_service=ep' /usr/sbin/tcpdump && \
 
 RUN adduser -h "/home/notroot" -g "unprivileged user" -s /bin/bash -u 1000 -D notroot notroot
 
+RUN echo "export CONTAINER=ubuntu" > /etc/container && \
+    echo "source /etc/container" >> /root/.bashrc && \
+    echo "source /etc/container" >> /home/notroot/.bashrc
+
 ENTRYPOINT ["/bin/sleep"]
 CMD ["2h"]
