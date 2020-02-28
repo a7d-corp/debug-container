@@ -19,4 +19,4 @@ Both images are built nightly and available on the Docker hub:
 
 ## Deployment
 
-Kubernetes manifests to deploy the images are available [here](https://github.com/glitchcrab/k8s-dbg-ymls)
+Kubernetes manifests to deploy the images are available [here](https://github.com/glitchcrab/k8s-dbg-ymls).
