@@ -1,7 +1,7 @@
 SA_CRT=/run/secrets/kubernetes.io/serviceaccount/ca.crt
 
 if [[ -f "$SA_CRT" ]]; then
-    CLUSTER_ID=$(openssl x509 -in /run/secrets/kubernetes.io/serviceaccount/ca.crt  -noout -subject | awk '{print $3}' | cut -d'.' -f1)
+    CLUSTER_ID=$(openssl x509 -in ${SA_CRT}  -noout -subject | awk '{print $3}' | cut -d'.' -f1)
     IN_K8S=True
 else
     CLUSTER_ID=""
