@@ -14,10 +14,6 @@ RUN apk add --no-cache $PACKAGES && \
     mv /tmp/croc/croc /usr/local/bin/ && \
     rm -rf /tmp/croc
 
-RUN /usr/sbin/setcap 'cap_net_bind_service=ep' /usr/sbin/tcpdump && \
-    echo "nobody ALL=(ALL) NOPASSWD: /usr/sbin/tcpdump" > /etc/sudoers.d/01_tcpdump && \
-    chmod 0440 /etc/sudoers.d/01_tcpdump
-
 RUN adduser -h "/home/notroot" -g "unprivileged user" -s /bin/bash -u 1000 -D notroot notroot
 
 COPY bashrc-cluster-id /bashrc-cluster-id
