@@ -12,7 +12,7 @@ RUN apt-get update && \
     apt-get clean && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* && \
-    wget https://github.com/schollz/croc/releases/download/v${CROC_VER}croc_${CROC_VER}_Linux-64bit.deb -O /tmp/croc.deb && \
+    wget https://github.com/schollz/croc/releases/download/v${CROC_VER}/croc_${CROC_VER}_Linux-64bit.deb -O /tmp/croc.deb && \
     dpkg -i /tmp/croc.deb && \
     rm -rf /tmp/croc.deb
 
