@@ -3,7 +3,7 @@ MAINTAINER simon@simonweald.com
 
 ENV PACKAGES="\
   sudo bash-completion vim jq ca-certificates openssl screen \
-  dnsutils tcpdump curl nmap tcpflow iftop mtr-tiny netcat-openbsd bridge-utils iperf ngrep tcptraceroute telnet iproute2 iputils-ping \
+  dnsutils tcpdump curl nmap tcpflow iftop mtr-tiny netcat-openbsd bridge-utils iperf ngrep tcptraceroute telnet iproute2 iputils-ping wget \
   htop strace iotop ltrace ncdu hdparm pciutils psmisc tree pv"
 
 RUN apt-get update && \
