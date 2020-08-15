@@ -17,6 +17,6 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 - Add [croc 8.0.13](https://github.com/schollz/croc/releases/tag/v8.0.13) to both containers.
 - Update Alpine base image to 3.12.0.
 
-[Unreleased]: https://github.com/giantswarm/cert-manager-app/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/giantswarm/cert-manager-app/releases/tag/v1.0.0
+[Unreleased]: https://github.com/glitchcrab/debug-container/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/glitchcrab/debug-container/releases/tag/v1.0.0
 
