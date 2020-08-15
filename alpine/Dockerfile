@@ -4,7 +4,7 @@ MAINTAINER simon@simonweald.com
 ENV CROC_VER="8.0.13"
 ENV PACKAGES="\
   sudo busybox-extras bash bash-completion ncurses vim jq ca-certificates openssl screen \
-  bind-tools iputils tcpdump curl nmap tcpflow iftop net-tools mtr netcat-openbsd bridge-utils iperf ngrep tcptraceroute wget \
+  bind-tools iputils tcpdump curl nmap tcpflow iftop net-tools mtr netcat-openbsd bridge-utils iperf ngrep tcptraceroute \
   htop atop strace iotop ltrace ncdu hdparm pciutils psmisc tree pv"
 
 RUN apk add --no-cache $PACKAGES && \
