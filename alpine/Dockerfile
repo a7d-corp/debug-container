@@ -23,4 +23,4 @@ RUN echo "export CONTAINER=alpine" > /etc/container && \
     echo -e "source /etc/container\nsource /bashrc-cluster-id" >> /home/notroot/.bashrc
 
 ENTRYPOINT ["/bin/sleep"]
-CMD ["2h"]
+CMD ["24h"]
