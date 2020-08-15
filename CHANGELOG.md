@@ -18,5 +18,5 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 - Update Alpine base image to 3.12.0.
 
 [Unreleased]: https://github.com/glitchcrab/debug-container/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/glitchcrab/debug-container/releases/tag/v1.0.0
+[v1.0.0]: https://github.com/glitchcrab/debug-container/releases/tag/v1.0.0
 
