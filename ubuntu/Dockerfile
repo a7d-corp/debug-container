@@ -25,4 +25,4 @@ RUN echo "export CONTAINER=ubuntu" > /etc/container && \
     echo "source /etc/container\nsource /bashrc-cluster-id" >> /home/notroot/.bashrc
 
 ENTRYPOINT ["/bin/sleep"]
-CMD ["2h"]
+CMD ["24h"]
