@@ -1,4 +1,4 @@
-FROM alpine:3.10.1
+FROM alpine:3.12.0
 MAINTAINER simon@simonweald.com
 
 ENV CROC_VER="8.0.13"
