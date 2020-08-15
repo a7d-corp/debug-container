@@ -10,7 +10,7 @@ ENV PACKAGES="\
 RUN apk add --no-cache $PACKAGES && \
     mkdir /tmp/croc && \
     wget https://github.com/schollz/croc/releases/download/v${CROC_VER}/croc_${CROC_VER}_Linux-64bit.tar.gz -O /tmp/croc/croc.tar.gz && \
-    tar -zxvf /tmp/croc/croc.tar.gz -c /tmp/croc/ && \
+    tar x -f /tmp/croc/croc.tar.gz -C /tmp/croc/ && \
     mv /tmp/croc/croc /usr/local/bin/ && \
     rm -rf /tmp/croc
 
