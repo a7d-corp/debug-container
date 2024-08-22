@@ -44,6 +44,9 @@ jobs:
           username: ${{ env.IMAGE_OWNER }}
           password: ${{ secrets.DOCKERHUB_TOKEN_UBUNTU }}
 
+      - name: Set current date as env variable
+        run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v5
@@ -51,8 +54,8 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/${{ env.IMAGE_NAME }}
           tags: |
             type=semver,pattern={{raw}}
-            type=schedule,pattern={{date 'YYYYMMDD'}}
             type=raw,value=latest
+            type=raw,value=$DATE
 
       - name: Build and push Docker image
         id: build-and-push
@@ -82,14 +85,17 @@ jobs:
           username: ${{ env.IMAGE_OWNER }}
           password: ${{ secrets.DOCKERHUB_TOKEN_UBUNTU }}
 
+      - name: Set current date as env variable
+        run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}
             type=raw,value=latest
+            type=raw,value=$DATE
 
       - name: Build and push Docker image
         id: build-and-push
