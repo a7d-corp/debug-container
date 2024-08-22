@@ -55,7 +55,7 @@ jobs:
           tags: |
             type=semver,pattern={{raw}}
             type=raw,value=latest
-            type=raw,value=$DATE
+            type=raw,value=${{ env.DATE }}
 
       - name: Build and push Docker image
         id: build-and-push
@@ -95,7 +95,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=latest
-            type=raw,value=$DATE
+            type=raw,value=${{ env.DATE }}
 
       - name: Build and push Docker image
         id: build-and-push
