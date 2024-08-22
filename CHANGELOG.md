@@ -9,6 +9,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ### Changed
 
+- Update Ubuntu to `noble`.
+
 ## [v1.0.0] - 2020-08-15
 
 ### Changed
