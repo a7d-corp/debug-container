@@ -24,7 +24,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /usr/share/nmap/nmap-os-db && \
     ln -s /usr/bin/kdig /usr/local/bin/dig
 
-RUN wget https://github.com/tailscale/tailcat/releases/download/v${TAILCAT_VER}/tailcat_${TAILCAT_VER}_linux_amd64.deb -O /tmp/tailcat.deb && \
+ARG TARGETARCH
+RUN wget https://github.com/tailscale/tailcat/releases/download/v${TAILCAT_VER}/tailcat_${TAILCAT_VER}_linux_${TARGETARCH}.deb -O /tmp/tailcat.deb && \
     dpkg -i /tmp/tailcat.deb && \
     rm /tmp/tailcat.deb
 

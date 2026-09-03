@@ -13,6 +13,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 - Update Ubuntu to `noble`.
 
+- Weekly workflow to build multiarch (`amd64`/`arm64`) Ubuntu and Alpine images and push them to GHCR.
+
 ## [v1.0.0] - 2020-08-15
 
 ### Changed

@@ -7,9 +7,10 @@ ENV PACKAGES="\
   bind-tools iputils tcpdump curl nmap tcpflow iftop net-tools mtr netcat-openbsd bridge-utils iperf ngrep tcptraceroute \
   htop atop strace iotop ltrace ncdu hdparm pciutils psmisc tree pv"
 
+ARG TARGETARCH
 RUN apk add --no-cache $PACKAGES && \
     mkdir /tmp/tailcat && \
-    wget https://github.com/tailscale/tailcat/releases/download/v${TAILCAT_VER}/tailcat_${TAILCAT_VER}_linux_amd64.tar.gz -O /tmp/tailcat/tailcat.tar.gz && \
+    wget https://github.com/tailscale/tailcat/releases/download/v${TAILCAT_VER}/tailcat_${TAILCAT_VER}_linux_${TARGETARCH}.tar.gz -O /tmp/tailcat/tailcat.tar.gz && \
     tar x -f /tmp/tailcat/tailcat.tar.gz -C /tmp/tailcat/ && \
     mv /tmp/tailcat/tailcat /usr/local/bin/ && \
     rm -rf /tmp/tailcat
