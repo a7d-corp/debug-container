@@ -1,18 +1,18 @@
-FROM alpine:3.12.0
+FROM alpine:3.24.1
 MAINTAINER simon@simonweald.com
 
-ENV CROC_VER="8.0.13"
+ENV TAILCAT_VER="0.4.0"
 ENV PACKAGES="\
-  sudo busybox-extras bash bash-completion ncurses vim jq ca-certificates openssl screen \
+  sudo busybox-extras bash bash-completion ncurses vim jq ca-certificates openssl screen openssh-client \
   bind-tools iputils tcpdump curl nmap tcpflow iftop net-tools mtr netcat-openbsd bridge-utils iperf ngrep tcptraceroute \
   htop atop strace iotop ltrace ncdu hdparm pciutils psmisc tree pv"
 
 RUN apk add --no-cache $PACKAGES && \
-    mkdir /tmp/croc && \
-    wget https://github.com/schollz/croc/releases/download/v${CROC_VER}/croc_${CROC_VER}_Linux-64bit.tar.gz -O /tmp/croc/croc.tar.gz && \
-    tar x -f /tmp/croc/croc.tar.gz -C /tmp/croc/ && \
-    mv /tmp/croc/croc /usr/local/bin/ && \
-    rm -rf /tmp/croc
+    mkdir /tmp/tailcat && \
+    wget https://github.com/tailscale/tailcat/releases/download/v${TAILCAT_VER}/tailcat_${TAILCAT_VER}_linux_amd64.tar.gz -O /tmp/tailcat/tailcat.tar.gz && \
+    tar x -f /tmp/tailcat/tailcat.tar.gz -C /tmp/tailcat/ && \
+    mv /tmp/tailcat/tailcat /usr/local/bin/ && \
+    rm -rf /tmp/tailcat
 
 RUN adduser -h "/home/notroot" -g "unprivileged user" -s /bin/bash -u 1000 -D notroot notroot
 
